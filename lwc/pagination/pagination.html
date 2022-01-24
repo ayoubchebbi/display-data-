@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-align_absolute-center slds-var-p-top_medium">
+
+        <!-- First button -->
+        <span class="slds-button slds-button_icon slds-button_icon-border-filled pointer" onclick={first}>
+            <lightning-icon icon-name="utility:jump_to_left" size="x-small" title="First"></lightning-icon>
+        </span>
+        <!-- First button -->
+
+        <!-- Previous button -->
+        <span class="slds-button slds-button_icon slds-button_icon-border-filled pointer" onclick={previous}>
+            <lightning-icon icon-name="utility:chevronleft" size="x-small" title="Previous"></lightning-icon>
+        </span>
+        <!-- Previous button -->
+
+        <!-- number button -->
+        <template for:each={listButton} for:item="buttonRow">
+            <span key={buttonRow.index} onclick={getDataFromIndex} data-id={buttonRow.index}
+                class={buttonRow.className}>{buttonRow.index}</span>
+        </template>
+        <!-- number button -->
+
+        <!-- Next button -->
+        <span class="slds-button slds-button_icon slds-button_icon-border-filled pointer" onclick={next}>
+            <lightning-icon icon-name="utility:chevronright" size="x-small" title="Next"></lightning-icon>
+        </span>
+        <!-- Next button -->
+
+        <!-- Last button -->
+        <span class="slds-button slds-button_icon slds-button_icon-border-filled pointer" onclick={last}>
+            <lightning-icon icon-name="utility:jump_to_right" size="x-small" title="Last"></lightning-icon>
+        </span>
+        <!-- Last button -->
+
+    </div>
+</template>

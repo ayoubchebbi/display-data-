@@ -1,0 +1,39 @@
+<template>
+
+  <!-- Card  -->
+  <lightning-card title="See more">
+
+    <div style="max-height: 370px;overflow-y: scroll;">
+
+      <!-- datatable -->
+      <lightning-datatable key-field="id" data={data} columns={columns}>
+      </lightning-datatable>
+      <!-- datatable -->
+
+      <template if:true={getDisplaySeeMoreButton}>
+
+        <!-- spinner -->
+        <template if:true={isDisplaySpinner}>
+          <div class="slds-is-relative">
+            <lightning-spinner alternative-text="Loading...">
+            </lightning-spinner>
+          </div>
+        </template>
+        <!-- spinner -->
+
+
+        <!-- See more -->
+        <template if:false={isDisplaySpinner}>
+          <div class="slds-align_absolute-center slds-p-around_medium">
+            <a onclick={displayData}>See more</a>
+          </div>
+        </template>
+        <!-- See more -->
+
+      </template>
+    </div>
+
+  </lightning-card>
+  <!-- Card  -->
+
+</template>

@@ -1,0 +1,26 @@
+<template>
+
+  <!-- Spinner -->
+  <template if:true={isLoadingSpinner}>
+    <lightning-spinner alternative-text="Uploading" size="medium"></lightning-spinner>
+  </template>
+  <!-- Spinner -->
+
+  <!-- Card  -->
+  <lightning-card title="Pagination">
+
+    <!-- datatable -->
+    <lightning-datatable key-field="id" data={data} columns={columns}>
+    </lightning-datatable>
+    <!-- datatable -->
+
+    <!-- pagination -->
+    <template if:false={isDisplayPaginationList}>
+      <c-pagination line-number={accountNumber} onchangepage={handlerChangePage}></c-pagination>
+    </template>
+    <!-- pagination -->
+
+  </lightning-card>
+  <!-- Card -->
+
+</template>
